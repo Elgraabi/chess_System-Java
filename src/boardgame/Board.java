@@ -8,7 +8,13 @@ public class Board {
 	private Piece[][] pieces;
 	
 	// Metodos Especificos
+	public Piece piece(int row, int columns) {
+		return this.pieces[row][columns];
+	}
 	
+	public Piece piece(Position position) {
+		return this.pieces[position.getRow()][position.getColumn()];
+	}
 	
 	// Metodos Especiais
 	public Board(Integer rows, Integer columns) {
