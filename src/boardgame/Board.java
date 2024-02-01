@@ -16,6 +16,11 @@ public class Board {
 		return this.pieces[position.getRow()][position.getColumn()];
 	}
 	
+	public void placePiece(Piece piece, Position position) {
+		this.pieces[position.getRow()][position.getColumn()] = piece;
+		piece.position = position;
+	}
+	
 	// Metodos Especiais
 	public Board(Integer rows, Integer columns) {
 		super();

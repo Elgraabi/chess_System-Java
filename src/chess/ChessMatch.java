@@ -1,6 +1,9 @@
 package chess;
 
 import boardgame.Board;
+import boardgame.Position;
+import chess.pieces.King;
+import chess.pieces.Rook;
 
 public class ChessMatch {
 
@@ -20,9 +23,16 @@ public class ChessMatch {
 		return mat;
 	}
 	
+	private void initialSetup() {
+		this.board.placePiece(new Rook(this.board, Color.WHITE), new Position(2, 1));
+		this.board.placePiece(new King(this.board, Color.BLACK), new Position(0, 4));
+		this.board.placePiece(new King(this.board, Color.WHITE), new Position(7, 4));
+	}
+	
 	// Metodos Especificos
 	public ChessMatch() {
 		super();
 		this.board = new Board(8, 8);
+		initialSetup();
 	}
 }
