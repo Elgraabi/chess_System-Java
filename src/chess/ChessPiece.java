@@ -8,6 +8,7 @@ public abstract class ChessPiece extends Piece {
 
 	// Atributos
 	private Color color;
+	private int moveCount;
 	
 	// Metodos Especificos
 	protected boolean isThereOpoponentPiece(Position position) {
@@ -17,6 +18,14 @@ public abstract class ChessPiece extends Piece {
 	
 	public ChessPosition getChessPosition() {
 		return ChessPosition.fromPosition(position);
+	}
+	
+	public void increaseMoveCount() {
+		this.moveCount++;
+	}
+	
+	public void decreaseMoveCount() {
+		this.moveCount--;
 	}
 	
 	// Metodos Especiais
@@ -29,4 +38,7 @@ public abstract class ChessPiece extends Piece {
 		return color;
 	}
 	
+	public int getMoveCount() {
+		return this.moveCount;
+	}
 }
